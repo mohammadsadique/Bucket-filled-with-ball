@@ -1,0 +1,23 @@
+.form-inline  > label {
+    display: flow-root;
+    padding-left: 0;
+}
+.box {
+    border: 1px solid;
+    border-radius: 5px;
+    padding: 10px;
+}
+.col_collasp_right {
+    padding-right: 0;
+}
+.col_collasp_left {
+    padding-left: 0;
+}
+.side_height {
+    /* height: 100%;     */
+    height: 288px;
+    overflow: scroll;
+}
+.resultMsg{
+    background: antiquewhite;
+}
