@@ -21,3 +21,4 @@ Route::get('/', [BucketController::class ,'home'])->name('home');
 Route::post('/buckets', [BucketController::class , 'store'])->name('buckets_store');
 Route::post('/ball', [BallController::class , 'store'])->name('balls_store');
 Route::post('/fill_bucket', [StoreBallInBucketController::class , 'fill_bucket'])->name('fill_bucket');
+
