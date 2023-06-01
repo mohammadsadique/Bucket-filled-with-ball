@@ -20,6 +20,7 @@
             <div class="box">
                 @if($errors->has('bucketForm'))
                     <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
                         <ul>
                             @foreach($errors->get('bucketForm') as $error)
                                 <li>{{ $error }}</li>
@@ -56,6 +57,7 @@
             <div class="box">
                 @if($errors->has('ballForm'))
                     <div class="alert alert-danger">
+                        <button type="button" class="close" data-dismiss="alert">×</button>
                         <ul>
                             @foreach($errors->get('ballForm') as $error)
                                 <li>{{ $error }}</li>
@@ -90,13 +92,10 @@
         <h4 class="col-md-12">Bucket Suggestion</h4><br>
         <div class="col-md-5 col_collasp_right">
             <div class="box">
-                @if($errors->has('fillBucketError'))
+                @if (Session::has('fillBucketError'))
                     <div class="alert alert-danger">
-                        <ul>
-                            @foreach($errors->get('fillBucketError') as $error)
-                                <li>{{ $error }}</li>
-                            @endforeach
-                        </ul>
+                        <button type="button" class="close" data-dismiss="alert">×</button>
+                        {{ Session::get('fillBucketError') }}
                     </div>
                 @endif
                 @if (Session::has('fillbucketsuccess'))
@@ -129,7 +128,7 @@
             <div class="box side_height">
                 <h4>RESULT</h4>
                 <p>Following are the suggested buckets:</p>
-                    {!! $subMessage !!}
+                    {!! $completeMessage !!}
             </div>
         </div>
     </div>

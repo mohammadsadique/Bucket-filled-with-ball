@@ -13,11 +13,12 @@ class BallController extends Controller
     public function store(Request $request)
     {
         $validator = Validator::make($request->all(), [
-            'ballname' => 'required|string',
+            'ballname' => 'required|string|unique:ball_lists,ballname',
             'ballvolume' => ['required', 'numeric', 'regex:/^\d+(\.\d{1,2})?$/'],
         ],
         [
             'ballname.required' => 'The ball name field is required.',
+            'ballname.unique' => 'The ball name has already been taken.',
             'ballvolume.required' => 'The ball volume field is required.',
             'ballvolume.numeric' => 'The ball volume field must be a number.',
             'ballvolume.regex' => 'The ball volume field format is invalid.'

@@ -18,7 +18,7 @@ return new class extends Migration
             $table->unsignedBigInteger('ball_id')->nullable();	
             $table->integer('total_ball')->default(0);
             $table->decimal('bucket_empty_space', 8, 2)->default(0);
-            $table->decimal('ball_filled_space', 8, 2)->default(0);
+            $table->decimal('ball_filled_space', 8, 2)->default(0)->comment('Bucket filled by balls');
             $table->decimal('remain_empty_space_in_bucket', 8, 2)->default(0);
             $table->integer('num_of_left_ball')->default(0);
             $table->timestamps();

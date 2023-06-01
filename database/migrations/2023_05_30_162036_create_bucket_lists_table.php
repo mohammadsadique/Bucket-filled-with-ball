@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('bucket_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('bucketname');
+            $table->string('bucketname')->unique();
             $table->integer('bucketvolume');
             $table->decimal('bucket_remaining_volume', 8, 2);
             $table->timestamps();

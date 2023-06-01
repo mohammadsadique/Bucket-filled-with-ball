@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('ball_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('ballname');
+            $table->string('ballname')->unique();
             $table->decimal('ballvolume', 8, 2);
             $table->timestamps();
         });
